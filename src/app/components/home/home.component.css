@@ -1,0 +1,51 @@
+.container {
+    text-align: center;
+    margin: 2rem;
+}
+.home{
+    margin: 1rem;
+}
+.btns {
+    margin: 0.5rem;
+}
+
+table {
+    width: 100%;
+}
+
+.searchForm{
+    text-align: center;
+}
+
+
+/* ============================= */
+/* Table Styles */
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+.searchForm{
+    align-items: center;
+}
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem;
+}
+thead{
+    align-items: center;
+    
+}

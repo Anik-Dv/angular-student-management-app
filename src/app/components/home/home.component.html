@@ -1,0 +1,108 @@
+<div class="section">
+    <div class="home">
+        <div class="card">
+            <div class="container">
+                <h1 class="headline">Welcome To Your ClassRoom</h1>                
+                    <a href="/register" class="btns" mat-raised-button color="primary">Register New Student</a>
+                    <a href="/update" class="btns" mat-raised-button color="accent">Update Student</a>
+                    <button routerLink="/delete" class="btns" mat-raised-button color="warn">Delete Student</button>
+                    <form enctype="multipart/form-data">
+                        <input type="file" (change)="onFileSelected($event)">
+                        <button type="submit" (click)="doUploadFile()" class="btns" mat-raised-button color="primary">Upload Assinments</button>
+                    </form>
+            </div>
+
+            <div class="container searchForm">
+
+                <form class="example-form" [formGroup]="data" (submit)="doSearch()">
+                    <mat-form-field class="example-full-width">
+                      <mat-label>Student ID</mat-label>
+                      <input type="number" matInput placeholder="Ex. 255" name="id" formControlName="id">
+                    </mat-form-field>
+                    <button type="submit" class="btns" mat-raised-button color="primary">Check</button>
+                </form>
+            </div>
+            <div class="container searchForm">
+
+                <form class="example-form" [formGroup]="downloaddata" (submit)="downloadFile()">
+                    <mat-form-field class="example-full-width">
+                      <mat-label>Assignment ID</mat-label>
+                      <input type="text" matInput placeholder="Ex. nxajd5fhe4i@3#ks..." name="fileName" formControlName="fileName">
+                    </mat-form-field>
+                    <button type="submit" class="btns" mat-raised-button color="primary">Download</button>
+                </form>
+            </div>
+
+            <h2 style="display: flex; justify-content: center;">All StudentS Record</h2>
+            <div class="content">
+            <!-- Tables -->
+            <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Department</th>
+                    <th>Assignment Name</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let student of students">
+                    <td>{{ student.studentId }}</td>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.age }}</td>
+                    <td>{{ student.department }}</td>
+                    <td>{{ student.assignmentName }}</td>
+                    <td>
+                        <button (click)="onDeleteStudent(student.studentId)" class="btns" mat-raised-button color="warn">Delete</button>
+                        <a href="/update" class="btns" mat-raised-button color="accent">Update</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Student Table -->
+<!-- <div class="container">
+    <table mat-table class="table">
+        <thead style="background: black;">
+            <tr>
+                <th>#STUDENTID</th>
+                <th>STUDENT NAME</th>
+                <th>STUDENT AGE</th>
+                <th>STUDENT DEPARTMENTS</th>
+                <th>STUDENT ASSINMENTS NAME</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let student of students">
+                <td>{{student?.StudentId}}</td>
+                <td>{{student?.name}}</td>
+                <td>{{student?.Age}}</td>
+                <td>{{student?.Departmant}}</td>
+                <td>{{student?.Assinment}}</td>
+            </tr> 
+        </tbody>
+
+    </table>
+</div> -->

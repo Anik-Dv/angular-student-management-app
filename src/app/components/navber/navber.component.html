@@ -1,0 +1,25 @@
+<mat-toolbar class="navber" color="primary">
+    <span>ClassRoom</span>
+    <span class="example-spacer"></span>
+
+   <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>Home</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button> -->
+    <!-- manu -->
+    <!-- <li>
+        <ul>
+            <a *ngFor="let item of navItems;">Home</a>
+            <a *ngFor="let item of navItems;">Home</a>
+            <a *ngFor="let item of navItems;">Home</a>
+            <a *ngFor="let item of navItems;">Home</a>
+        </ul>
+    </li> -->
+    <button mat-raised-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>View Students</button>
+        <button mat-menu-item>Upload Assinments</button>
+    </mat-menu>
+</mat-toolbar>
